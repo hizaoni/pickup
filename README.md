@@ -22,3 +22,53 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# データベース設計
+
+## usersテーブル
+
+| Column                | Type   | Option                    |
+|-----------------------|--------|---------------------------|
+| name                  | string | null: false               |
+| division              | string | null: false               |
+| email                 | string | null: false, unique: true |
+| password              | string | null: false               |
+| confirmation_password | string | null: false               |
+
+### Association
+
+- has_many :items
+
+## itemsテーブル
+| Column      | Type    | Option      |
+|-------------|---------|-------------|
+| name        | string  | null: false |
+| category_id | integer | null: false |
+| quantity    | integer | null: false |
+| order_point | integer | null: false |
+| store       | string  |             |
+| location    | string  |             |
+
+### Association
+
+- belongs_to :user
+- has_many :stocks
+- has_many :ships
+
+## stocksテーブル
+| Column   | Type       | Option                         |
+|----------|------------|--------------------------------|
+| item_id  | references | null: false, foreign_key: true |
+| quantity | integer    | null: false                    |
+
+### Association
+- belongs_to :item
+
+## shipsテーブル
+| Column   | Type       | Option                         |
+|----------|------------|--------------------------------|
+| item_id  | references | null: false, foreign_key: true |
+| quantity | integer    | null: false                    |
+
+### Association
+- belongs_to :item
