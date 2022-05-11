@@ -48,6 +48,7 @@ Things you may want to cover:
 | order_point | integer | null: false |
 | store       | string  |             |
 | location    | string  |             |
+| unit        | string  |             |
 
 ### Association
 
