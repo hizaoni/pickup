@@ -49,6 +49,7 @@ Things you may want to cover:
 | store       | string  |             |
 | location    | string  |             |
 | unit        | string  |             |
+| remarks     | text    |             |
 
 ### Association
 
