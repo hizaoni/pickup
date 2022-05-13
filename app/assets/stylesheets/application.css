@@ -33,11 +33,19 @@ header{
 .header_left{
   font-size: 30px;
   font-weight: 200px;
+ 
+}
 
+.header_left a {
+  color: beige;
 }
 
 .header_right a{
-  color: black;
+  color: beige;
+}
+
+.header_right{
+  color: beige;
 }
 
 footer{
@@ -49,3 +57,4 @@ footer{
 a {
   text-decoration: none;
 }
+
