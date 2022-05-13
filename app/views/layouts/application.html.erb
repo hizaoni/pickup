@@ -4,12 +4,30 @@
     <title>Pickup</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+      <div class="header_left">
+        Pickup
+      </div>
+      <div class="header_right_login">
+        管理者：ログイン　新規登録
+      </div>
+      <!-- ログイン中は以下を表示する -->
+      <!-- <div class="header_right_logout">
+        管理者ログイン中　ログアウト
+      </div> -->
+    </header>
     <%= yield %>
+    <footer>
+      <div class="footer_center">
+        2022 @Pickup
+      </div>
+    </footer>
   </body>
 </html>
