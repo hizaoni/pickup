@@ -15,13 +15,15 @@
       <div class="header_left">
         Pickup
       </div>
-      <div class="header_right_login">
-        管理者：ログイン　新規登録
+      <% unless user_signed_in? %>
+      <div class="header_right login">
+        管理者： <%= link_to 'ログイン', new_user_session_path %><%= link_to '新規登録', new_user_registration_path %>
       </div>
-      <!-- ログイン中は以下を表示する -->
-      <!-- <div class="header_right_logout">
-        管理者ログイン中　ログアウト
-      </div> -->
+      <% else %>
+      <div class="header_right logout">
+        管理者<%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+      </div>
+      <%end%>
     </header>
     <%= yield %>
     <footer>

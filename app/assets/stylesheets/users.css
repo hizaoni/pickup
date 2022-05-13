@@ -1,6 +1,6 @@
 .user_main{
   height: calc(100vh - 60px - 30px);
-  background-color: aquamarine;
+  background-color: #FFFFFF;
   display: flex;
   justify-content: center;
   align-items: center;

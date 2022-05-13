@@ -22,7 +22,7 @@
 }
 
 header{
-  background-color: aqua;
+  background-color: blue;
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -36,8 +36,16 @@ header{
 
 }
 
+.header_right a{
+  color: black;
+}
+
 footer{
   height: 40px;
   width: 100%;
-  background-color: antiquewhite;
+  background-color: blue;
+}
+
+a {
+  text-decoration: none;
 }
