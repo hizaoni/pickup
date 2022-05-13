@@ -8,6 +8,9 @@
         </div>
         <%= form_with model: @item, local: true do |f|%>
           <div class="form-example">
+            <%= f.file_field :image, id:"item-image" %>
+          </div>
+          <div class="form-example">
             <div class="name"> 名称:</div> 
             <%= f.text_field :name, placeholder: "例：ハサミ"%>
           </div>
