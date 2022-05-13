@@ -13,7 +13,7 @@
           </div>
           <div class="form-example">
             <div class="name"> カテゴリー:</div>
-            <%= f.text_field :category_id, placeholder: "#"%>
+            <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"})%>
           </div>
           <div class="form-example">
             <div class="name"> 備品数:(0でも可)</div>
