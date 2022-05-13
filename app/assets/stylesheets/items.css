@@ -33,3 +33,12 @@
 .search_items_title{
   margin-bottom: 10px;
 }
+
+
+/* 備品新規登録画面 */
+.item_new_main{
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
