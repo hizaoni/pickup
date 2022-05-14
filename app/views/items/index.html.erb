@@ -14,21 +14,22 @@
     <%= link_to '備品新規登録', new_item_path %>
     <div class="items_title">備品一覧</div>
     <table class="items_table">
-      <tr class="items_index_menu">  
+      <tr class="menu items_index">  
         <th></th>
-        <th>備品名</th>
+        <th>名称</th>
         <th>カテゴリー</th>
         <th>在庫数</th>
         <th>発注点</th>
       </tr>
-      <tr class="items_index_data">
+      <% @items.each do |item|%>
+      <tr class="data items_index">
         <td><input type="checkbox"></td>
-        <td>ハサミ</td>
-        <td>文房具</td>
-        <td>3</td>
-        <td>2</td>
+        <td><%=item.name%></td>
+        <td><%=item.category.name%></td>
+        <td><%=item.quantity %> </td>
+        <td><%=item.order_point%></td>
       </tr>
-      
+      <%end%>
     </table>
   </div>
 </div>
