@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!
+  before_action :item_find, only: [:create, :show, :edit, :update, :destroy]
 
   def index
     @items = Item.all
@@ -10,7 +11,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_param)
     if @item.save
       redirect_to root_path
     else
@@ -20,15 +20,12 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
-    @item = Item.find(params[:id])
     if @item.update(item_param)
       redirect_to root_path
     else
@@ -37,7 +34,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
     @item.destroy
     redirect_to root_path
     
@@ -56,6 +52,10 @@ class ItemsController < ApplicationController
   private
   def item_param
     params.require(:item).permit(:name, :category_id, :quantity,:order_point, :unit, :location, :store, :remarks, :image)
+  end
+
+  def item_find
+    @item = Item.find(params[:id])
   end
 
 
