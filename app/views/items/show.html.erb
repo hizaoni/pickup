@@ -42,7 +42,7 @@
       <div class="show_btn">
         <form action="" class="edit_delete_btn">
           <%=link_to "編集", edit_item_path%>
-          <%=link_to "削除", "#"%>
+          <%=link_to "削除", item_path, method: :delete %>
           <%=link_to "戻る", root_path%>
         </form>
       </div>
