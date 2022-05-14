@@ -103,3 +103,35 @@ td{
 .search_items_title{
   margin-bottom: 10px;
 }
+
+.show_main{
+  height: calc(100vh - 60px - 30px);
+  padding: 40px 20px;
+}
+.show_title{
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.show_sub{
+  display: flex;
+  justify-content: center;
+
+}
+
+.item_show_img{
+}
+
+.item_show_table_main{
+  background-color: white;
+  width:500px;
+  height: 500px;
+  margin-left: 20px;
+}
+
+
+.item_show{
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+}
