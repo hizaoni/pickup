@@ -13,6 +13,7 @@
     </div>
     <%= link_to '備品新規登録', new_item_path %>
     <div class="items_title">備品一覧</div>
+    <%= form_with(method: :delete, url: {controller: 'items', action: 'destroy_many' }, local: true) do |f|%>
     <table class="items_table">
       <tr class="menu items_index">  
         <th></th>
@@ -21,15 +22,18 @@
         <th>在庫数</th>
         <th>発注点</th>
       </tr>
-      <% @items.each do |item|%>
-      <tr class="data items_index">
-        <td><input type="checkbox"></td>
-        <td><%=link_to item.name, item_path(item) %></td>
-        <td><%=item.category.name%></td>
-        <td><%=item.quantity %> </td>
-        <td><%=item.order_point%></td>
-      </tr>
-      <%end%>
+        
+        <% @items.each do |item|%>
+        <tr class="data items_index">
+          <td><%= check_box_tag "deletes[#{item.id}]", item.id %></td>
+          <td><%=link_to item.name, item_path(item) %></td>
+          <td><%=item.category.name%></td>
+          <td><%=item.quantity %> </td>
+          <td><%=item.order_point%></td>
+        </tr>
+        <%end%>
     </table>
+    <%= f.submit "一括削除", class:"delete_btn"%>
+    <%end%>
   </div>
 </div>

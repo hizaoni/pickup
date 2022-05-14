@@ -135,3 +135,9 @@ td{
   height: 100%;
   font-size: 16px;
 }
+
+.delete_btn{
+  height: 30px;
+  width: 100px;
+  display: block;
+}

@@ -36,6 +36,23 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to root_path
+    
+  end
+
+  def destroy_many
+    checked_data = params[:deletes].keys
+    if Item.destroy(checked_data)
+      redirect_to root_path
+      return
+    else
+      render root_path
+    end
+  end
+
   private
   def item_param
     params.require(:item).permit(:name, :category_id, :quantity,:order_point, :unit, :location, :store, :remarks, :image)
