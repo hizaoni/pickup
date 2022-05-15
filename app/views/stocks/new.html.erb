@@ -1,0 +1,31 @@
+<div class="stock_main">
+  <div class="stock_main_sub">
+    <div class="subtitle">
+      備品入庫
+    </div>
+    
+    <div class="stock_form">
+    <%= form_with model: @stock, local: true do |f|%>
+      <div class="form-example">
+        <div class="category form"> カテゴリー:</div> 
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category_select", id:"stock-category-select"})%>
+      </div>
+      <div class="form-example">
+        <div class="item_name form"> 備品名:</div>
+        <%= f.collection_select(:item, Item.all, :id, :name, {}, {class:"item_select", id:"stock-item-select"})%>
+      </div>
+      <div class="current_item_quantity">
+      </div>
+
+      <div class="form-example">
+        <%= f.text_field :quantity %><span>個</span>
+      </div>
+      <div class="form-example">
+        <input type="submit" value="入庫">
+      
+      </div>
+    
+    <%end%>
+    </div>
+  </div>
+</div>
