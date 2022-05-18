@@ -134,51 +134,28 @@ td{
   font-size: 16px;
 }
 
-.delete_btn{
-  height: 30px;
-  width: 100px;
-  display: block;
-}
-
 
 .main{
-  height: calc(100vh - 60px - 30px);
+  min-height: calc(100vh - 60px - 30px);
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.items-main{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-width: calc(100vw - 250px);
 }
 
 
 
 
 
-.toppage_content{
-  display: flex;
-}
-
-.btn{
-  width: 300px;
-  text-align: center;
-  margin: 0 50px;
-  line-height: 300px;
-  font-size: 40px;
-  font-weight: 400;
-  border-radius: 10px;
-  color: black;
-}
 
 .stock{
   background-color: aqua;
+  border: outset 5px blue;
 }
 
 .ship{
   background-color:coral;
+  border: outset 5px red;
 }
 
 .subtitle{
@@ -197,7 +174,7 @@ td{
   justify-content: center;
 }
 
-.stock_main_sub{
+.stock_sub{
   width: 100%;
   height: 100%;
 
@@ -206,4 +183,54 @@ td{
 
 .form-example{
   margin-bottom: 30px;
+}
+
+.field_with_errors{
+  display: contents;
+}
+
+.ship_error{
+  text-align: center;
+  height: 50px;
+  color: red;
+  font-size: 30px;
+  font-weight: bold;
+}
+.ship_main{
+  min-height: calc(100vh - 60px - 30px);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.ship_main_sub{
+  width: 100%;
+
+
+}
+
+.side_bar{
+  height: calc(100vh - 60px - 30px- 50px);
+  width: 250px;
+  background-color: aqua;
+  padding: 50px 30px 0;
+}
+.blank_side_bar{
+  height: calc(100vh - 60px - 30px- 50px);
+  width: 180px;
+  background-color: white;
+
+}
+
+.sidebar_content a{
+  text-decoration: none;
+}
+
+.sidebar_content{
+  color: black;
+  display: block;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 400
+  ;
 }

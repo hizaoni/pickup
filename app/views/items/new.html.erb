@@ -1,53 +1,57 @@
 <div class="item_new_main">
-      <div class="item_new_sub">
-        <div class="subtitle">
-          備品
-        </div>
-        <div class="form_title">
-          新規登録
-        </div>
-        <%= form_with model: @item, local: true do |f|%>
-          <div class="form-example">
-            <%= f.file_field :image, id:"item-image" %>
-          </div>
-          <div class="form-example">
-            <div class="name"> 名称:</div> 
-            <%= f.text_field :name, placeholder: "例：ハサミ"%>
-          </div>
-          <div class="form-example">
-            <div class="name"> カテゴリー:</div>
-            <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"})%>
-          </div>
-          <div class="form-example">
-            <div class="name"> 備品数:(0でも可)</div>
-            <%= f.text_field :quantity, placeholder: "例：10（半角数字）"%>
-          </div>
-          <div class="form-example">
-            <div class="name">発注点:</div>
-            <%= f.text_field :order_point, placeholder: "例：10（半角数字）"%>
-          </div>
-         
-          
-          <div class="form-example">
-            <div class="name">単位:</div>
-            <%= f.text_field :unit, placeholder: "例：個、袋、etc"%>
-          </div>
-          <div class="form-example">
-            <div class="name">保管場所:</div>
-            <%= f.text_field :location, placeholder: "例：棚A"%>
-          </div>
-          <div class="form-example">
-            <div class="name">発注元:</div>
-            <%= f.text_field :store, placeholder: "例：○○社"%>
-          </div>
-          <div class="form-example">
-            <div class="name">備考:</div>
-            <%= f.text_area :remarks, placeholder: "例：よく切れるので注意"%>
-          </div>
-          <div class="form-example">
-            <%= f.submit value: "登録"%>
-          </div>
-        <%end%>
-        <%= link_to "戻る", root_path %>
+  <%= render partial: 'layouts/sidebar'%>
+
+  <div class="item_new_sub">
+    <div class="item_new_form">
+      <div class="subtitle">
+        備品
       </div>
+      <div class="form_title">
+        新規登録
+      </div>
+      <%= form_with model: @item, local: true do |f|%>
+        <div class="form-example">
+          <%= f.file_field :image, id:"item-image" %>
+        </div>
+        <div class="form-example">
+          <div class="name"> 名称:</div> 
+          <%= f.text_field :name, placeholder: "例：ハサミ"%>
+        </div>
+        <div class="form-example">
+          <div class="name"> カテゴリー:</div>
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"})%>
+        </div>
+        <div class="form-example">
+          <div class="name"> 備品数:(0でも可)</div>
+          <%= f.text_field :quantity, placeholder: "例：10（半角数字）"%>
+        </div>
+        <div class="form-example">
+          <div class="name">発注点:</div>
+          <%= f.text_field :order_point, placeholder: "例：10（半角数字）"%>
+        </div>
+        
+        
+        <div class="form-example">
+          <div class="name">単位:</div>
+          <%= f.text_field :unit, placeholder: "例：個、袋、etc"%>
+        </div>
+        <div class="form-example">
+          <div class="name">保管場所:</div>
+          <%= f.text_field :location, placeholder: "例：棚A"%>
+        </div>
+        <div class="form-example">
+          <div class="name">発注元:</div>
+          <%= f.text_field :store, placeholder: "例：○○社"%>
+        </div>
+        <div class="form-example">
+          <div class="name">備考:</div>
+          <%= f.text_area :remarks, placeholder: "例：よく切れるので注意"%>
+        </div>
+        <div class="form-example">
+          <%= f.submit value: "登録"%>
+        </div>
+      <%end%>
+      <%= link_to "戻る", root_path %>
     </div>
+  </div>
+</div>

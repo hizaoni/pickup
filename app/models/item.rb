@@ -1,5 +1,8 @@
 class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
+  has_many :stocks, dependent: :destroy
+  has_many :ships, dependent: :destroy
+
   belongs_to :category
   has_one_attached :image
 

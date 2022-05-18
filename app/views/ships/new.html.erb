@@ -1,0 +1,39 @@
+<div class="ship_main">
+  <div class="ship_main_sub">
+    <div class="subtitle">
+      備品出庫
+    </div>
+    <div class="ship_error">
+      <% if flash[:alert] %>
+      <p><%= flash[:alert] %></p>
+      <% end %>
+    </div>
+    
+    <div class="stock_form">
+      <%= form_with(model: @ship, local: true, id:"ship-form") do |f|%>
+        <%# <div class="form-example">
+          <div class="category form">
+            カテゴリー:
+          </div>
+            <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category_select", id:"stock-category-select"})%> 
+        <%# </div> %>
+        <div class="form-example">
+          <div class="item_name form" id="stock-item-name">
+            備品名:</div>
+          <%= f.collection_select(:item_id, Item.all, :id, :name, {}, {class:"item_select", id:"stock-item-select"})%>
+        </div>
+        <div class="current_item_quantity">
+        </div>
+
+        <div class="form-example">
+          <%= f.text_field :quantity, placeholder: "例：10", id: "ship-quantity"  %><span>個</span>
+        </div>
+        <div class="form-example">
+          <%= f.submit "出庫", id: "ship-submit"%>
+        
+        </div>
+      
+      <%end%>
+    </div>
+  </div>
+</div>

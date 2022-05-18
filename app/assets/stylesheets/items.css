@@ -1,10 +1,34 @@
-.items{
-  width: 100%;
-  height: 100%;
-  padding: 30px;
-
+/* トップページ */
+.top-main{
+  display: flex;
+  min-height: calc(100vh - 60px - 30px);
 
 }
+
+.toppage_content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: calc(100vw - 300px);
+}
+
+.buttons{
+  display: flex;
+}
+
+
+.top_btn{
+  width: 300px;
+  text-align: center;
+  margin: 0 50px;
+  line-height: 300px;
+  font-size: 40px;
+  font-weight: 400;
+  border-radius: 10px;
+  color: black;
+
+}
+
 
 .table{
   border: 1px solid black;
@@ -37,8 +61,84 @@
 
 /* 備品新規登録画面 */
 .item_new_main{
-  padding: 40px 20px;
+  display: flex;
+}
+
+.item_new_sub{
   display: flex;
   justify-content: center;
+  min-width: calc(100vw - 300px);
+  padding-bottom: 40px;
+}
+
+/* 備品一覧 */
+.item_table{
+  padding: 10px;
+}
+
+.item_table_name{
+  width: 200px;
+  padding: 10px;
+}
+
+.item_table_category{
+  width: 200px;
+  padding: 10px;
+}
+
+.item_table_quantity{
+  width: 100px;
+  padding: 10px;
+}
+
+.item_table_order_point{
+  width: 100px;
+  padding: 10px;
+}
+
+.item_table_button{
+  width: 100px;
+  padding: 10px;
+  text-align: center;
+}
+
+.index_button a{
+  text-decoration: none;
+}
+
+.index_button {
+  background-color: #DDDDDD;
+  color: black;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: outset;
+
+}
+
+
+.bundle_delete_button{
+  margin-top: 20px;
+  height: 30px;
+  width: 100px;
+  border-radius: 5px;
+  border: outset;
+  cursor: pointer;
+}
+
+.menu_items_index{
+  background-color: aqua;
+}
+
+.item-main{
+  display: flex;
+  justify-content: center;
+  min-height: calc(100vh - 60px - 30px);
+
+}
+
+.items_show{
+  min-width: calc(100vw - 300px);
+  padding-left: 50px;
+  padding-top: 50px;
 }
 

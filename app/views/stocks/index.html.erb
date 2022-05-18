@@ -1,8 +1,18 @@
-<div class="main">
+<div class="top-main">
+  <% if user_signed_in? %>
+    <%= render partial: 'layouts/sidebar'%>
+  <%else%>
+    <div class= "blank_side_bar">
+    </div>
+  <%end%>
   <div class="toppage_content">
-      <%=link_to "入庫", new_stock_path, class: "stock btn"%>
-    <div class="ship btn">
-      出庫
+    <div class="buttons">
+      <div class="stock top_btn">
+        <%=link_to "入庫", new_stock_path%>
+      </div>
+      <div class="ship top_btn">
+        <%=link_to "出庫", new_ship_path%>
+      </div>
     </div>
   </div>
 </div>
