@@ -150,12 +150,12 @@ td{
 
 .stock{
   background-color: aqua;
-  border: outset 5px blue;
+  border: outset 5px #CCFFFF;
 }
 
 .ship{
   background-color:coral;
-  border: outset 5px red;
+  border: outset 5px #FFCCCC;
 }
 
 .subtitle{
