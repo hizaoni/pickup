@@ -148,38 +148,6 @@ td{
 
 
 
-.stock{
-  background-color: aqua;
-  border: outset 5px #CCFFFF;
-}
-
-.ship{
-  background-color:coral;
-  border: outset 5px #FFCCCC;
-}
-
-.subtitle{
-  font-size: 30px;
-  margin: 40px;
-
-}
-.stock_form{
-  display: flex;
-  justify-content: center;
-}
-.stock_main{
-  height: calc(100vh - 60px - 30px);
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-}
-
-.stock_sub{
-  width: 100%;
-  height: 100%;
-
-
-}
 
 .form-example{
   margin-bottom: 30px;
@@ -233,4 +201,12 @@ td{
   font-size: 20px;
   font-weight: 400
   ;
+}
+
+.sign_out_sidebar_content{
+  color: #CCCCCC;
+  display: block;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 400
 }

@@ -1,0 +1,66 @@
+.top-main{
+  display: flex;
+  min-height: calc(100vh - 60px - 30px);
+
+}
+
+.toppage_content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: calc(100vw - 300px);
+}
+
+.buttons{
+  display: flex;
+}
+
+
+
+
+.stock_top_btn{
+  background-color: aqua;
+  border: outset 5px #CCFFFF;
+  width: 300px;
+  text-align: center;
+  margin: 0 50px;
+  line-height: 300px;
+  font-size: 70px;
+  font-weight: bold;
+  border-radius: 10px;
+  color: black;
+  padding: 150px;
+
+}
+
+.ship_top_btn{
+  background-color:coral;
+  border: outset 5px #FFCCCC;
+  width: 300px;
+  text-align: center;
+  margin: 0 50px;
+  line-height: 300px;
+  font-size: 70px;
+  font-weight: bold;
+  border-radius: 10px;
+  color: black;
+  padding: 150px;
+}
+
+.stock_form{
+  display: flex;
+  justify-content: center;
+}
+.stock_main{
+  height: calc(100vh - 60px - 30px);
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.stock_sub{
+  width: 100%;
+  height: 100%;
+
+
+}

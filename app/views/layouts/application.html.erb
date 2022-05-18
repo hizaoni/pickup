@@ -18,7 +18,13 @@
       </div>
       <% unless user_signed_in? %>
       <div class="header_right login">
-        管理者： <%= link_to 'ログイン', new_user_session_path %><%= link_to '新規登録', new_user_registration_path %>
+        <p>管理者</p>
+        <% unless current_page?(new_user_session_path)%>
+          <%= link_to 'ログイン', new_user_session_path %>
+        <%end%>
+        <%unless current_page?(new_user_registration_path)%>
+          <%= link_to '新規登録', new_user_registration_path %>
+        <%end%>
       </div>
       <% else %>
       <div class="header_right logout">

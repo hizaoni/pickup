@@ -1,13 +1,63 @@
 .user_main{
-  height: calc(100vh - 60px - 30px);
-  background-color: #FFFFFF;
+  min-height: calc(100vh - 60px - 30px);
   display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+.user_sub{
+  min-width: calc(100vw - 300px);
+  padding-bottom: 30px;
 }
 
 .form_title{
   text-align: center;
-  margin-bottom: 40px;
+  line-height: 40px;
   font-size: 25px;
+}
+
+.form_text{
+border:2px solid #cccccc;
+margin-bottom: 20px;
+height: 40px;
+width: 300px;
+font-size: 20px;
+font-weight: 500;
+}
+
+
+
+.form_label{
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.subtitle{
+  font-size: 30px;
+  padding: 50px 0 0 50px;
+}
+
+
+
+.form_area{
+  display: flex;
+  justify-content:center;
+  padding: 50px 0;
+}
+
+.separate{
+  margin: 0 50px;
+}
+
+.actions{
+  display: flex;
+  justify-content: center;
+}
+
+.user_new_submit{
+  padding: 5px 10px;
+  font-size: 20px;
+}
+
+.field{
+  margin-bottom: 20px;
 }
