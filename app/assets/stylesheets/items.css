@@ -140,23 +140,31 @@
   font-size: 20px;
 }
 
-.image_input_btn{
+#image { 
+  display: none;
+}
+.button {
   display: block;
-  background-color: #EEEEEE;
-  width: 300px;
-  line-height: 50px;
-  border-radius: 5px;
-  padding-top: 2px;
-  color: black;
-  font-size: 20px;
-  font-weight: bold;
-  text-decoration: none;
   text-align: center;
-  border-bottom: solid #BBBBBB 3px;
-  border-right: solid #BBBBBB 3px;
-  letter-spacing: 1px;
+  background-color: #3366FF;
+  padding: 3px;
+  color: aliceblue;
+  
 }
 
-.image_form{
-  display: none;
+.image_selectbox{
+  width: 300px;
+  border: 2px solid blue;
+}
+
+.file_name{
+  height: 30px;
+  background-color: #DDFFFF;
+  text-align: center;
+  line-height: 30px;
+  color: #666666;
+
+
+
+
 }
