@@ -47,14 +47,15 @@
             <%= f.label :"備考", class: "form_label"  %><br />
             <%= f.text_area :remarks, placeholder: "例：よく切れるので注意", class:"form_text"%>
           </div>
-           <div class="form-example">
-            <%= f.file_field :image, id:"item-image" %>
-          </div>
+          
+          <%= f.label :image_file, "画像をアップロード", class: "image_input_btn"%>
+          <%= f.file_field :image_file, class:"image_form" %>
+          
         </div>
       </div>
-        <div class="form-example">
-          <%= f.submit value: "登録"%>
-        </div>
+      <div class="form-example">
+        <%= f.submit value: "登録", class: "item_new_submit"%>
+      </div>
       
       <%end%>
     </div>
