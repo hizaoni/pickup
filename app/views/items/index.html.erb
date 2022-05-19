@@ -13,11 +13,6 @@
       </div>
 
     </div>
-    <div class="ship_error">
-      <% if flash[:notice] %>
-      <p><%= flash[:notice] %></p>
-      <% end %>
-    </div>
     <%= link_to '備品新規登録', new_item_path %>
     <div class="items_title">備品一覧</div>
     <%= form_with(method: :delete, url: {controller: 'items', action: 'destroy_many' }, local: true) do |f|%>
