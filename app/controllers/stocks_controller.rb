@@ -1,12 +1,10 @@
 class StocksController < ApplicationController
-
   def new
     @items = Item.all
     @stock = Stock.new
   end
 
   def create
-
     @stock = Stock.new(stock_param)
     if @stock.save
       redirect_to root_path
@@ -22,13 +20,8 @@ class StocksController < ApplicationController
   # end
 
   private
+
   def stock_param
-    params.require(:stock).permit(:quantity,:item_id)
+    params.require(:stock).permit(:quantity, :item_id)
   end
-
-
-
-
-
 end
-

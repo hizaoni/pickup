@@ -3,9 +3,4 @@ class Ship < ApplicationRecord
   with_options presence: true do
     validates :quantity
   end
-
-
-  
-
-  
 end

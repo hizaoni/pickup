@@ -17,14 +17,12 @@ class ItemsController < ApplicationController
     else
       render :new
     end
-
   end
 
   def show
-    @ships = Ship.where(item_id: (params[:id]))
-    @stock = Stock.where(item_id: (params[:id]))
-    @quantity = (@item.quantity + @stock.sum(:quantity)) -  @ships.sum(:quantity)
-    
+    @ships = Ship.where(item_id: params[:id])
+    @stock = Stock.where(item_id: params[:id])
+    @quantity = (@item.quantity + @stock.sum(:quantity)) - @ships.sum(:quantity)
   end
 
   def edit
@@ -41,28 +39,27 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     redirect_to root_path
-    
   end
 
   def destroy_many
-    unless params.key?("deletes")
-      redirect_to items_path, notice: '削除する備品を選択してください'
-      return 
-    else  
+    if params.key?('deletes')
       checked_data = params[:deletes].keys
       if Item.destroy(checked_data)
         redirect_to items_path, notice: '削除しました'
-        return
+        nil
       else
         render items_path
       end
+    else
+      redirect_to items_path, notice: '削除する備品を選択してください'
+      nil
     end
   end
 
-
   private
+
   def item_param
-    params.require(:item).permit(:name, :category_id, :quantity,:order_point, :unit, :location, :store, :remarks, :image)
+    params.require(:item).permit(:name, :category_id, :quantity, :order_point, :unit, :location, :store, :remarks, :image)
   end
 
   def item_find
@@ -70,8 +67,5 @@ class ItemsController < ApplicationController
   end
 
   def delete_param
-    
   end
-
-
 end
