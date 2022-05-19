@@ -28,7 +28,7 @@
       </div>
       <% else %>
       <div class="header_right logout">
-        管理者： <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+        <%= current_user.name %> <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
       </div>
       <%end%>
     </header>
