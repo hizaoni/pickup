@@ -7,8 +7,13 @@
     <div class="form_title">
         ログイン
     </div>
-
+    <div class="ship_error">
+      <% if flash[:alert] %>
+      <p><%= flash[:alert]%></p>
+      <% end %>
+    </div>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      
       <div class="form_area">
         <div class="separate">
           <div class="field">

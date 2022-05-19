@@ -29,7 +29,7 @@
           <%= f.text_field :quantity, placeholder: "例：10", id: "ship-quantity"  %><span>個</span>
         </div>
         <div class="form-example">
-          <%= f.submit "出庫", id: "ship-submit"%>
+          <%= f.submit "出庫", id: "ship-submit", data: { confirm: '出庫を確定しますか？'}%>
         
         </div>
       

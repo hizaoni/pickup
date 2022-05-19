@@ -33,7 +33,7 @@ font-weight: 500;
 
 .subtitle{
   font-size: 30px;
-  padding: 50px 0 0 50px;
+  padding: 30px 0 0 50px;
 }
 
 
@@ -41,7 +41,6 @@ font-weight: 500;
 .form_area{
   display: flex;
   justify-content:center;
-  padding: 50px 0;
 }
 
 .separate{
@@ -60,4 +59,11 @@ font-weight: 500;
 
 .field{
   margin-bottom: 20px;
+}
+
+.user_resi_error{
+  columns: 2;
+  height: 100px;
+  padding: 10px 0 0 200px;
+  color: red;
 }
