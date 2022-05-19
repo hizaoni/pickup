@@ -4,3 +4,8 @@ ja:
       user:
         name: 氏名
         division: 所属
+      item:
+        name: 氏名
+        quantity: 備品数
+        order_point: 発注点
+        category_id: カテゴリー

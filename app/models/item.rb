@@ -11,5 +11,5 @@ class Item < ApplicationRecord
     validates :quantity
     validates :order_point
   end
-  validates :category_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :category_id, numericality: { other_than: 1, message: "を選択してください" }
 end
