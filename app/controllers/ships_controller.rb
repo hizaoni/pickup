@@ -10,9 +10,6 @@ class ShipsController < ApplicationController
   end
 
   def create
-    @item = Item.find_by(id: ship_param[:item_id])
-    @ships = Stock.where(item_id: ship_param[:item_id])
-    @stock = Stock.where(item_id: ship_param[:item_id])
     quantity_check
     
   end
@@ -32,11 +29,21 @@ class ShipsController < ApplicationController
     @item = Item.find_by(id: ship_param[:item_id])
     @ships = Ship.where(item_id: ship_param[:item_id])
     @stock = Stock.where(item_id: ship_param[:item_id])
+    @quantity = (@item.quantity + @stock.sum(:quantity)) - @ships.sum(:quantity)
     
-    if ship_param[:quantity].to_i <= (@item.quantity + @stock.sum(:quantity) - @ships.sum(:quantity))
+    if ship_param[:quantity].to_i < @quantity
       @ship = Ship.new(ship_param)
       if @ship.save
+        if @item.order_point > (@quantity - @ship.quantity)
+          @users = User.all
+          @message = "#{@ship.item.name}が発注点になりました。"
+          @users.each do |user|
+            ContactMailer.send_mail(user, @message).deliver_now
+          end
           redirect_to root_path 
+        else
+          redirect_to root_path
+        end
       else
         render :new
         return
