@@ -10,6 +10,7 @@
         新規登録
       </div>
       <%= form_with model: @item, local: true do |f|%>
+        <%= render 'layouts/error_messages', model: f.object %>
         <div class="form-example">
           <%= f.file_field :image, id:"item-image" %>
         </div>
@@ -51,7 +52,7 @@
           <%= f.submit value: "登録"%>
         </div>
       <%end%>
-      <%= link_to "戻る", root_path %>
+      <%= link_to "戻る", items_path %>
     </div>
   </div>
 </div>

@@ -73,16 +73,15 @@
   text-align: center;
 }
 
-.index_button a{
-  text-decoration: none;
-}
 
 .index_button {
-  background-color: #DDDDDD;
+  background-color: #EEEEEE;
   color: black;
   padding: 8px 12px;
   border-radius: 5px;
-  border: outset;
+  border-bottom: solid #BBBBBB 3px;
+  border-right: solid #BBBBBB 3px;
+  letter-spacing: 3px;
 
 }
 
@@ -94,6 +93,7 @@
   border-radius: 5px;
   border: outset;
   cursor: pointer;
+  letter-spacing: 3px;
 }
 
 .menu_items_index{

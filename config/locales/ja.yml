@@ -1,0 +1,6 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: 氏名
+        division: 所属
