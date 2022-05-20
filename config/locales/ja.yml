@@ -9,3 +9,7 @@ ja:
         quantity: 備品数
         order_point: 発注点
         category_id: カテゴリー
+      stock:
+        quantity: 入庫数
+      ship:
+        quantity: 出庫数

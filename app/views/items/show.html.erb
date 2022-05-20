@@ -1,50 +1,56 @@
 <div class="show_main">
-  <div class="show_title">
-    備品詳細情報
-  </div>
-  <div class="show_sub">
-    <div class="item_show_img">
-      <%if @item.image.attached?%>
-        <%= image_tag @item.image.variant(resize: '500x500'), class: 'item-image'%>
-      <%end%>
+  <%= render partial: 'layouts/sidebar'%>
+  <div class="show_submain">
+    <div class="show_title">
+      備品詳細情報
     </div>
-    <div class="item_show_table_main">
-      <table class="item_show table">
-        <tr class="item_shows table">
-          <td class="item_show_menu table">名称</td>
-          <td class="item_show_data table"><%=@item.name%></td>
-        </tr>
-        <tr class="item_shows table">
-          <td class="item_show_menu table">カテゴリー</td>
-          <td class="item_show_data table"><%=@item.category.name%></td>
-        </tr>
-        <tr class="item_shows table">
-          <td class="item_show_menu table">在庫数</td>
-          <td class="item_show_data table"><%=@quantity%></td>
-        </tr>
-        <tr class="item_shows table">
-          <td class="item_show_menu table">発注点</td>
-          <td class="item_show_data table"><%=@item.order_point%></td>
-        </tr>
-        <tr class="item_shows table">
-          <td class="item_show_menu table">保管場所</td>
-          <td class="item_show_data table"><%=@item.location%></td>
-        </tr>
-        <tr class="item_shows table">
-          <td class="item_show_menu table">発注元</td>
-          <td class="item_show_data table"><%=@item.store%></td>
-        </tr>
-        <tr class="item_shows table">
-          <td class="item_show_menu table">備考</td>
-          <td class="item_show_data table"><%=@item.remarks%></td>
-        </tr>
-      </table>
-      <div class="show_btn">
-        <form action="" class="edit_delete_btn">
-          <%=link_to "編集", edit_item_path%>
-          <%=link_to "削除", item_path, method: :delete %>
-          <%=link_to "戻る", root_path%>
-        </form>
+    <div class="show_sub">
+      <div class="item_show_img">
+        <%if @item.image.attached?%>
+          <%= image_tag @item.image.variant(resize: '480x480'), class: 'item-image'%>
+        <%else%>
+          画像なし
+        <%end%>
+      </div>
+      <div class="item_show_table_main">
+        <table class="item_show_table">
+          <tr class="item_shows_tr">
+            <td class="item_show_menu_table">名称</td>
+            <td class="item_show_data_table"><%=@item.name%></td>
+          </tr>
+          <tr class="item_shows_tr">
+            <td class="item_show_menu_table">カテゴリー</td>
+            <td class="item_show_data_table"><%=@item.category.name%></td>
+          </tr>
+          <tr class="item_shows_tr">
+            <td class="item_show_menu_table">在庫数</td>
+            <td class="item_show_data_table"><%=@quantity%></td>
+          </tr>
+          <tr class="item_shows_tr">          
+            <td class="item_show_menu_table">発注点</td>
+            <td class="item_show_data_table"><%=@item.order_point%></td>
+          </tr>
+          <tr class="item_shows_tr">
+            <td class="item_show_menu_table">保管場所</td>
+            <td class="item_show_data_table"><%=@item.location%></td>
+          </tr>
+          <tr class="item_shows_tr">
+            <td class="item_show_menu_table">発注元</td>
+            <td class="item_show_data_table"><%=@item.store%></td>
+          </tr>
+          <tr class="item_shows_tr">
+            <td class="item_show_menu_table">備考</td>
+            <td class="item_show_data_table_remarks"><%=@item.remarks%></td>
+          </tr>
+        </table>
+        <div class="show_btn">
+          <div class="edit_delete_btn">
+            <%=link_to "編集", edit_item_path%>
+          </div>
+          <div class="edit_delete_btn">
+            <%=link_to "削除", item_path, method: :delete %>
+          </div>
+        </div>
       </div>
     </div>
   </div>

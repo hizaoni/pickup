@@ -1,6 +1,7 @@
 .top-main{
   display: flex;
   min-height: calc(100vh - 60px - 30px);
+  background-color: #EEEEEE;
 
 }
 
@@ -21,7 +22,7 @@
 .stock_top_btn{
   background-color: aqua;
   border: outset 5px #CCFFFF;
-  width: 300px;
+  width: 250px;
   text-align: center;
   margin: 0 50px;
   line-height: 300px;
@@ -29,7 +30,9 @@
   font-weight: bold;
   border-radius: 10px;
   color: black;
-  padding: 150px;
+  padding: 150px 120px;
+  letter-spacing: 20px;
+  text-indent: 20px;
 
 }
 
@@ -44,7 +47,9 @@
   font-weight: bold;
   border-radius: 10px;
   color: black;
-  padding: 150px;
+  padding: 150px 120px;
+  letter-spacing: 20px;
+  text-indent: 20px;
 }
 
 .stock_form{
@@ -53,14 +58,81 @@
 }
 .stock_main{
   height: calc(100vh - 60px - 30px);
+  background-color: #EEEEEE;
   width: 100vw;
   display: flex;
   justify-content: center;
+  padding: calc(((100vh - 60px - 30px) - 500px)/2) 0;
 }
+
 
 .stock_sub{
   width: 100%;
   height: 100%;
 
 
+}
+
+.stock_error{
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stock_form_contents{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+  background-color: #FFFFFF;
+}
+
+.stock_form_content{
+  width: 400px;
+  border:2px solid #cccccc;
+  margin: 0 50px 20px;
+  height: 50px;
+  font-size: 25px;
+  font-weight: 500;
+  display: block;
+  
+}
+
+.stock_form_submit{
+  width: 250px;
+  border:2px solid #cccccc;
+  height: 50px;
+  font-size: 25px;
+  font-weight: 600;
+  background-color: #398AB9;
+  color: #EEEEEE;
+  margin-bottom: 20px;
+  letter-spacing: 25px;
+  text-indent: 25px;
+  text-align: center;
+}
+
+.stock_sub_title{
+  text-align: center;
+  background-color: #398AB9;
+  color: #EEEEEE;
+  font-size: 25px;
+  line-height: 50px;
+  letter-spacing: 3px;
+  font-weight: 600;
+
+}
+
+.stock_form_submit_area{
+  display: flex;
+  justify-content: center;
+}
+
+.stock_form_label{
+  font-size: 20px;
+  margin-left:30px;
+  font-weight: 300;
+  display: block;
+  margin-bottom: 5px;
 }

@@ -1,27 +1,31 @@
 <div class="stock_main">
   <div class="stock_main_sub">
-    <div class="subtitle">
+    <div class="stock_sub_title">
       備品入庫
     </div>
     
     <div class="stock_form">
-    <%= form_with(model: @stock, local: true, id:"form") do |f|%>
+    <%= form_with(model: @stock, local: true, id:"stock-form", class: "stock_form_contents") do |f|%>
+      <div class="stock_error">
+        <%= render 'layouts/error_messages', model: f.object %>
+      </div>
       <%# <div class="form-example"> %>
         <%# <div class="category form"> カテゴリー:</div>  %>
         <%# <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category_select", id:"stock-category-select"})%> 
       <%# </div> %>
       <div class="form-example">
-        <div class="item_name form", id="stock-item-name"> 備品名:</div>
-        <%= f.collection_select(:item_id, Item.all, :id, :name, {}, {class:"item_select", id:"stock-item-select"})%>
+        <%= f.label :"備品名", class: "stock_form_label"  %>
+        <%= f.collection_select(:item_id, Item.all, :id, :name, {}, {class:"stock_form_content", id:"stock-item-select"})%>
       </div>
       <div class="current_item_quantity">
       </div>
 
       <div class="form-example">
-        <%= f.text_field :quantity %><span>個</span>
+        <%= f.label :"入庫数", class: "stock_form_label"  %>
+        <%= f.text_field :quantity, class:"stock_form_content" %><span></span>
       </div>
-      <div class="form-example">
-        <%= f.submit "入庫", data: { confirm: '入庫を確定しますか？'}%>
+      <div class="stock_form_submit_area">
+        <%= f.submit "入庫", class: "stock_form_submit", data: { confirm: '入庫を確定しますか？'}%>
       
       </div>
     

@@ -1,53 +1,62 @@
 <div class="item_new_main">
-      <div class="item_new_sub">
-        <div class="subtitle">
-          備品
-        </div>
-        <div class="form_title">
-          編集
-        </div>
-        <%= form_with model: @item, local: true do |f|%>
-          <div class="form-example">
-            <%= f.file_field :image, id:"item-image" %>
-          </div>
-          <div class="form-example">
-            <div class="name"> 名称:</div> 
-            <%= f.text_field :name, placeholder: "例：ハサミ"%>
-          </div>
-          <div class="form-example">
-            <div class="name"> カテゴリー:</div>
-            <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"})%>
-          </div>
-          <div class="form-example">
-            <div class="name"> 備品数:(0でも可)</div>
-            <%= f.text_field :quantity, placeholder: "例：10（半角数字）"%>
-          </div>
-          <div class="form-example">
-            <div class="name">発注点:</div>
-            <%= f.text_field :order_point, placeholder: "例：10（半角数字）"%>
-          </div>
+  <%= render partial: 'layouts/sidebar'%>
+
+  <div class="item_new_sub">
+    <div class="item_new_sub_sub">
+      <div class="item_new_subtitle">
+        備品情報編集
+      </div>
+      <%= form_with(model: @item, local: true,  class:"item_new_form_area") do |f|%>
+      <div class="item_new_form">
+        <div class="item_new_separate">
+          <%= render 'layouts/error_messages', model: f.object %>
          
+          <div class="form-example">
+            <%= f.label :"備品名称", class: "form_label"  %><span class="mandatory">（必須）</span><br />
+            <%= f.text_field :name, placeholder: "例：ハサミ", class:"form_text"%>
+          </div>
+          <div class="form-example">
+            <%= f.label :"カテゴリー", class: "form_label"  %><span class="mandatory">（必須）</span><br />
+            <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form_text"})%>
+          </div>
+          <div class="form-example">
+            <%= f.label :"発注点", class: "form_label"  %><span class="mandatory">（必須）</span>
+            <br />
+            <%= f.text_field :order_point, placeholder: "例：10（半角数字）", class:"form_text"%>
+          </div>
+          <div class="form-example">
+            <%= f.label :"単位", class: "form_label"  %><br />
+            <%= f.text_field :unit, placeholder: "例：個、袋、etc", class:"form_text"%>
+          </div>
+        </div>
+        <div class="item_new_separate">
+
           
           <div class="form-example">
-            <div class="name">単位:</div>
-            <%= f.text_field :unit, placeholder: "例：個、袋、etc"%>
+            <%= f.label :"保管場所", class: "form_label"  %><br />
+            <%= f.text_field :location, placeholder: "例：棚A", class:"form_text"%>
           </div>
           <div class="form-example">
-            <div class="name">保管場所:</div>
-            <%= f.text_field :location, placeholder: "例：棚A"%>
+            <%= f.label :"発注元", class: "form_label"  %><br />
+            <%= f.text_field :store, placeholder: "例：○○社", class:"form_text"%>
           </div>
           <div class="form-example">
-            <div class="name">発注元:</div>
-            <%= f.text_field :store, placeholder: "例：○○社"%>
+            <%= f.label :"備考", class: "form_label"  %><br />
+            <%= f.text_area :remarks, placeholder: "例：よく切れるので注意", class:"form_text"%>
           </div>
-          <div class="form-example">
-            <div class="name">備考:</div>
-            <%= f.text_area :remarks, placeholder: "例：よく切れるので注意"%>
+          <div class="image_selectbox">
+            <div id="file-name" class="file_name">未選択</div>
+            <label for="image">
+              <span class="button">画像を選択</span><%= f.file_field :image, id: "image" %>
+            </label>
           </div>
-          <div class="form-example">
-            <%= f.submit value: "編集"%>
-          </div>
-        <%end%>
-        <%= link_to "戻る", root_path %>
+        </div>
       </div>
+      <div class="item_new_submit_area">
+        <%= f.submit value: "編集", class: "item_new_submit"%>
+      </div>
+      
+      <%end%>
     </div>
+  </div>
+</div>

@@ -6,7 +6,7 @@
       <div class="item_new_subtitle">
         備品新規登録
       </div>
-      <%= form_with model: @item, local: true do |f|%>
+      <%= form_with(model: @item, local: true, class:"item_new_form_area") do |f|%>
       <div class="item_new_form">
         <div class="item_new_separate">
           <%= render 'layouts/error_messages', model: f.object %>
