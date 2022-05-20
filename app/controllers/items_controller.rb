@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :category_select
   before_action :item_find, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -56,6 +56,14 @@ class ItemsController < ApplicationController
     end
   end
 
+  def category_select
+    selected_category_items = Item.where(category_id: category_param[:category_id])
+
+    render json: {selected_category_items: selected_category_items}
+    
+  end
+
+
   private
 
   def item_param
@@ -67,5 +75,9 @@ class ItemsController < ApplicationController
   end
 
   def delete_param
+  end
+
+  def category_param
+    params.require(:stock).permit(:category_id)
   end
 end
