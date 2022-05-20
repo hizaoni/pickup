@@ -10,8 +10,8 @@
         <%= render 'layouts/error_messages', model: f.object %>
       </div>
       <div class="form-example">
-        <div class="category form"> カテゴリー:</div> 
-        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category_select", id:"stock-category-select"})%>
+        <%= f.label :"カテゴリー", class: "stock_form_label"  %>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"stock_form_content", id:"stock-category-select"})%>
       </div>
       <div class="form-example">
         <%= f.label :"備品名", class: "stock_form_label", id: 'stock-form-label' %>
