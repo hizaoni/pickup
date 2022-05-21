@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :item_find, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.all
+    @items = Item.all.order(id: "DESC")
   end
 
   def new
@@ -82,6 +82,19 @@ class ItemsController < ApplicationController
     quantity.store("quantity", select_item_quantity)
     render json: {select_item: select_item, quantity: quantity}
     
+  end
+
+  def search_item
+    search_category_items = Item.where(category_id: params[:category_id])
+    category = Category.find(params[:category_id]).name
+    
+    quantity = []
+    search_category_items.each do |item|
+      select_item_quantity = item.quantity + Stock.where(item_id: item.id).sum(:quantity) -  Ship.where(item_id: item.id).sum(:quantity)
+      quantity.push(select_item_quantity)
+    end
+    render json: {search_category_items: search_category_items, quantity: quantity, category: category}
+
   end
 
 

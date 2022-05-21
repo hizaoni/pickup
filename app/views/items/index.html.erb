@@ -5,65 +5,65 @@
     
     <div class="search_items">
       <div class="search_items_title">
-        <form class="search_items_content" action="" method="get" class="form-example">
-          <input type="text" placeholder="カテゴリー" >
-          <input type="text" placeholder="備品名" >
-          <input type="submit" value="検索">
-        </form>
+      <%= form_with(model: @item, local: true, class:"item_search_form_area", id: "item-search-form") do |f|%>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"form_text", id: "search_category"})%>
+      <%end%>
       </div>
 
     </div>
     <div class="items_title">備品一覧</div>
     <%= form_with(method: :delete, url: {controller: 'items', action: 'destroy_many' }, local: true) do |f|%>
     <table class="items_table">
-      <tr class="menu_items_index">  
-        <th class="item_table"></th>
-        <th class="item_table_name">名称</th>
-        <th class="item_table_category">カテゴリー</th>
-        <th class="item_table_quantity">在庫数</th>
-        <th class="item_table_order_point">発注点</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-        
-        <% @items.each do |item|%>
-          <% if item.order_point >= (item.quantity + Stock.where(item_id: (item.id)).sum(:quantity) -  Ship.where(item_id: (item.id)).sum(:quantity)) %>
-            <tr class="data_items_index_op">
-              <td class="item_table"><%= check_box_tag "deletes[#{item.id}]", item.id %></td>
-              <td class="item_table_name"><%=link_to item.name, item_path(item) %></td>
-              <td class="item_table_category"><%=item.category.name%></td>
-              <td class="item_table_quantity_op"><%=item.quantity + Stock.where(item_id: (item.id)).sum(:quantity) -  Ship.where(item_id: (item.id)).sum(:quantity) %> </td>
-              <td class="item_table_order_point"><%=item.order_point%></td>
-              <td class="item_table_button">
-                <%= link_to "詳細", item_path(item), class:"index_button" %>
-              </td>
-              <td class="item_table_button">
-                <%= link_to "編集", edit_item_path(item), class:"index_button" %>
-              </td>
-              <td class="item_table_button">
-                <%= link_to "削除", item_path(item), method: :delete, class:"index_button" %>
-              </td>
-            </tr>
-          <% else %>
-            <tr class="data_items_index">
-              <td class="item_table"><%= check_box_tag "deletes[#{item.id}]", item.id %></td>
-              <td class="item_table_name"><%=link_to item.name, item_path(item) %></td>
-              <td class="item_table_category"><%=item.category.name%></td>
-              <td class="item_table_quantity"><%=item.quantity + Stock.where(item_id: (item.id)).sum(:quantity) -  Ship.where(item_id: (item.id)).sum(:quantity) %> </td>
-              <td class="item_table_order_point"><%=item.order_point%></td>
-              <td class="item_table_button">
-                <%= link_to "詳細", item_path(item), class:"index_button" %>
-              </td>
-              <td class="item_table_button">
-                <%= link_to "編集", edit_item_path(item), class:"index_button" %>
-              </td>
-              <td class="item_table_button">
-                <%= link_to "削除", item_path(item), method: :delete, class:"index_button" %>
-              </td>
-            </tr>
+      <tbody id="items-tbody">
+        <tr id="menu-items-index" class="menu_items_index">  
+          <th class="item_table"></th>
+          <th class="item_table_name">名称</th>
+          <th class="item_table_category">カテゴリー</th>
+          <th class="item_table_quantity">在庫数</th>
+          <th class="item_table_order_point">発注点</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+          
+          <% @items.each do |item|%>
+            <% if item.order_point >= (item.quantity + Stock.where(item_id: (item.id)).sum(:quantity) -  Ship.where(item_id: (item.id)).sum(:quantity)) %>
+              <tr id="data-items-index" class="data_items_index_op">
+                <td class="item_table"><%= check_box_tag "deletes[#{item.id}]", item.id %></td>
+                <td class="item_table_name"><%=link_to item.name, item_path(item) %></td>
+                <td class="item_table_category"><%=item.category.name%></td>
+                <td class="item_table_quantity_op"><%=item.quantity + Stock.where(item_id: (item.id)).sum(:quantity) -  Ship.where(item_id: (item.id)).sum(:quantity) %> </td>
+                <td class="item_table_order_point"><%=item.order_point%></td>
+                <td class="item_table_button">
+                  <%= link_to "詳細", item_path(item), class:"index_button" %>
+                </td>
+                <td class="item_table_button">
+                  <%= link_to "編集", edit_item_path(item), class:"index_button" %>
+                </td>
+                <td class="item_table_button">
+                  <%= link_to "削除", item_path(item), method: :delete, class:"index_button" %>
+                </td>
+              </tr>
+            <% else %>
+              <tr id="data-items-index" class="data_items_index">
+                <td class="item_table"><%= check_box_tag "deletes[#{item.id}]", item.id %></td>
+                <td class="item_table_name"><%=link_to item.name, item_path(item) %></td>
+                <td class="item_table_category"><%=item.category.name%></td>
+                <td class="item_table_quantity"><%=item.quantity + Stock.where(item_id: (item.id)).sum(:quantity) -  Ship.where(item_id: (item.id)).sum(:quantity) %> </td>
+                <td class="item_table_order_point"><%=item.order_point%></td>
+                <td class="item_table_button">
+                  <%= link_to "詳細", item_path(item), class:"index_button" %>
+                </td>
+                <td class="item_table_button">
+                  <%= link_to "編集", edit_item_path(item), class:"index_button" %>
+                </td>
+                <td class="item_table_button">
+                  <%= link_to "削除", item_path(item), method: :delete, class:"index_button" %>
+                </td>
+              </tr>
+            <%end%>
           <%end%>
-        <%end%>
+      </tbody>
     </table>
     <%= f.submit "一括削除", class:"bundle_delete_button"%>
     <%end%>

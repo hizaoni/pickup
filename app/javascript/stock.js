@@ -1,7 +1,7 @@
 function stockChoice(){
   const currentItemQuantity = document.getElementById("current-item-quantity");
   const category = document.getElementById("stock-category-select");
-  const changeCategory = category.addEventListener("change", () => {
+  category.addEventListener("change", () => {
     const stockForm = document.getElementById("stock-form");
     let formData = new FormData(stockForm);
     const XHR = new XMLHttpRequest();
