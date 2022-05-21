@@ -136,3 +136,9 @@
   display: block;
   margin-bottom: 5px;
 }
+
+.current_item_quantity{
+  height: 30px;
+  text-align: center;
+  font-size: 25px;
+}
