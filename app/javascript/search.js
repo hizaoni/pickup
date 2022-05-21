@@ -1,7 +1,18 @@
 function searchItem() {
-  const categorySelect = document.getElementById("search_category")
+  const searchForm = document.getElementById("item-search-form");
+  const categorySelect = document.getElementById("search_category");
+  const itemTbody = document.getElementById("items-tbody");
+  const defaultHtml = itemTbody.innerHTML;
   categorySelect.addEventListener("change", () => {
-    const searchForm = document.getElementById("item-search-form");
+    const searchCategorySelect = document.getElementById("search_category");
+    if (searchCategorySelect.value == 1 ){
+      while (itemTbody.firstChild) {
+        itemTbody.removeChild(itemTbody.firstChild);
+        };
+      itemTbody.insertAdjacentHTML("beforeend", defaultHtml);
+
+
+    } else {
     let formData = new FormData(searchForm);
     const XHR = new XMLHttpRequest();
     XHR.open("POST", '/items/search', true);
@@ -11,7 +22,6 @@ function searchItem() {
       const items = XHR.response.search_category_items;
       const quantity = XHR.response.quantity;
       const responseCategory = XHR.response.category;
-      const itemTbody = document.getElementById("items-tbody");
       const tableMenu = document.getElementById("menu-items-index");
       const tableContents = document.getElementById("data-items-index")
       const itemTbodyFirstChild = itemTbody.firstElementChild;
@@ -70,7 +80,7 @@ function searchItem() {
         
         
       ;
-    }
+    }}
   });
 
 };

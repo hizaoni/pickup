@@ -12,8 +12,8 @@
 
     </div>
     <div class="items_title">備品一覧</div>
-    <%= form_with(method: :delete, url: {controller: 'items', action: 'destroy_many' }, local: true) do |f|%>
-    <table class="items_table">
+    <%= form_with(method: :delete, url: {controller: 'items', action: 'destroy_many' }, local: true, id:"index_table_form") do |f|%>
+    <table id="items-table" class="items_table">
       <tbody id="items-tbody">
         <tr id="menu-items-index" class="menu_items_index">  
           <th class="item_table"></th>

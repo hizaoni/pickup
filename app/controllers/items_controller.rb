@@ -94,7 +94,6 @@ class ItemsController < ApplicationController
       quantity.push(select_item_quantity)
     end
     render json: {search_category_items: search_category_items, quantity: quantity, category: category}
-
   end
 
 
