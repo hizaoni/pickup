@@ -20,7 +20,7 @@
         <%= f.label :"備品名", class: "stock_form_label"  %>
         <%= f.collection_select(:item_id, Item.all, :id, :name, {include_blank: true}, {class:"stock_form_content", id:"stock-item-select"})%>
       </div>
-      <div class="current_item_quantity">
+      <div class="current_item_quantity" id="current-item-quantity">
       </div>
 
       <div class="form-example">
