@@ -50,8 +50,23 @@ th{
   font-weight: bold;
 }
 
+.data_items_index_op{
+  background-color: #FFDBC9;
+}
+
+.item_table_quantity_op{
+  color: red;
+  font-weight: bold;
+  padding: 10px;
+}
+
 .item_table{
   padding: 10px;
+}
+
+.item_table_name a{
+  text-decoration: none;
+  color: #333333;
 }
 
 .item_table_name{

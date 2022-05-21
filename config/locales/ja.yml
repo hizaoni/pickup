@@ -11,5 +11,7 @@ ja:
         category_id: カテゴリー
       stock:
         quantity: 入庫数
+        item: 備品
       ship:
         quantity: 出庫数
+        item: 備品

@@ -57,9 +57,12 @@ class ItemsController < ApplicationController
   end
 
   def category_select
-    selected_category_items = Item.where(category_id: category_param[:category_id])
-
-    render json: {selected_category_items: selected_category_items}
+    if category_param[:category_id] == 0
+      selected_category_items = Item.all
+    else
+      selected_category_items = Item.where(category_id: category_param[:category_id])
+      render json: {selected_category_items: selected_category_items}
+    end
     
   end
 
@@ -78,6 +81,10 @@ class ItemsController < ApplicationController
   end
 
   def category_param
-    params.require(:stock).permit(:category_id)
+    if params.key?("stock")
+      params.require(:stock).permit(:category_id)
+    elsif params.key?("ship")
+      params.require(:ship).permit(:category_id)
+    end
   end
 end

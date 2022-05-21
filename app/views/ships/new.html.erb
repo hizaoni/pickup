@@ -4,18 +4,21 @@
       備品出庫
     </div>
     
+    
     <div class="stock_form">
     <%= form_with(model: @ship, local: true, id:"stock-form", class: "stock_form_contents") do |f|%>
-      <div class="stock_error">
-        <%= render 'layouts/error_messages', model: f.object %>
+      <div class="ship_error">
+        <% if flash[:alert] %>
+          <%= flash[:alert] %>
+        <% end %>
       </div>
-      <%# <div class="form-example"> %>
-        <%# <div class="category form"> カテゴリー:</div>  %>
-        <%# <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category_select", id:"stock-category-select"})%> 
-      <%# </div> %>
+       <div class="form-example">
+        <%= f.label :"カテゴリー", class: "stock_form_label"  %>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"stock_form_content", id:"stock-category-select"})%>
+      </div>
       <div class="form-example">
         <%= f.label :"備品名", class: "stock_form_label"  %>
-        <%= f.collection_select(:item_id, Item.all, :id, :name, {}, {class:"stock_form_content", id:"stock-item-select"})%>
+        <%= f.collection_select(:item_id, Item.all, :id, :name, {include_blank: true}, {class:"stock_form_content", id:"stock-item-select"})%>
       </div>
       <div class="current_item_quantity">
       </div>

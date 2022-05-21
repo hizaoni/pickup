@@ -12,12 +12,20 @@ function stockChoice(){
       const itemSelect = document.getElementById('stock-item-select');
       itemSelect.innerHTML = "";
       const items = XHR.response.selected_category_items;
-      items.forEach(function( item ) {
+      console.log(items);
+      if (items.length == 0 ) {
         const html = `
-      <option value="${item.id}">${item.name}</option>`;
-      itemSelect.insertAdjacentHTML("afterbegin", html);
-      });
-      
+          <option value="">なし</option>`;
+          itemSelect.insertAdjacentHTML("afterbegin", html);
+      } else {
+        items.forEach(function( item ) {
+          const html = `
+          <option value="${item.id}">${item.name}</option>`;
+          itemSelect.insertAdjacentHTML("afterbegin", html);
+        });
+
+      };
+     
     };
 
 
@@ -27,4 +35,4 @@ function stockChoice(){
 };
 
 
-window.addEventListener("load", stockChoice)
+window.addEventListener("load", stockChoice);

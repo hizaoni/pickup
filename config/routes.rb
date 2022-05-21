@@ -8,6 +8,5 @@ Rails.application.routes.draw do
   delete 'items', to: 'items#destroy_many'
   post 'items/select', to: 'items#category_select'
   resources 'stocks', only: [:new, :create]
-  post 'stocks/choice', to: 'stocks#category_choice', as: "category_choice"
   resources 'ships', only: [:new, :create, :index]
 end
