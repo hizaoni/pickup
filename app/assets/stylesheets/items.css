@@ -265,6 +265,14 @@ th{
   padding: 3px;
 }
 
+.item_show_data_table_op{
+  width: 300px;
+  font-size: 20px;
+  padding: 3px;
+  color: red;
+  background-color: #FFDBC9;
+}
+
 .item_show_data_table_remarks{
   height: 250px;
 }

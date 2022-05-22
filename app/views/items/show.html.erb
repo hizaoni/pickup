@@ -24,7 +24,11 @@
           </tr>
           <tr class="item_shows_tr">
             <td class="item_show_menu_table">在庫数</td>
-            <td class="item_show_data_table"><%=@quantity%></td>
+            <% if @quantity < @item.order_point%>
+              <td class="item_show_data_table_op"><%=@quantity%></td>
+            <%else%>
+              <td class="item_show_data_table"><%=@quantity%></td>
+            <%end%>
           </tr>
           <tr class="item_shows_tr">          
             <td class="item_show_menu_table">発注点</td>
