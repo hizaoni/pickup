@@ -11,6 +11,7 @@ require("../image")
 require("../stock")
 require('jquery')
 require("../search")
+require("../ship")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

@@ -60,7 +60,6 @@ class ItemsController < ApplicationController
     if category_param[:category_id] == '1'
       selected_category_items = Item.all
       render json: { selected_category_items: selected_category_items }
-      nil
     else
       selected_category_items = Item.where(category_id: category_param[:category_id])
       if selected_category_items.length == 1
@@ -68,7 +67,6 @@ class ItemsController < ApplicationController
         quantity = {}
         quantity.store('quantity', select_item_quantity)
         render json: { selected_category_items: selected_category_items, quantity: quantity }
-        nil
       else
         render json: { selected_category_items: selected_category_items }
       end
