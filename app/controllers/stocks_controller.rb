@@ -13,11 +13,6 @@ class StocksController < ApplicationController
     end
   end
 
-  # def category_choice
-  #   select_items = Item.where(category_id: params[:category_id])
-  #   binding.pry
-  #   render json:{ select_items: select_items }
-  # end
 
   private
 

@@ -57,12 +57,12 @@
   justify-content: center;
 }
 .stock_main{
-  height: calc(100vh - 60px - 30px);
+  height: calc(100vh - 60px - 60px);
   background-color: #EEEEEE;
   width: 100vw;
   display: flex;
   justify-content: center;
-  padding: calc(((100vh - 60px - 30px) - 500px)/2) 0;
+  padding-top: 30px;
 }
 
 
