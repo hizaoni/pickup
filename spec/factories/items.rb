@@ -8,8 +8,8 @@ FactoryBot.define do
     location { '倉庫A' }
     unit { '本' }
     remarks { 'よく切れる' }
-    after(:build) do |message|
-      message.image.attach(io: File.open('public/images/test_image.jpeg'), filename: 'test_image.jpeg')
+    after(:build) do |item|
+      item.image.attach(io: File.open('public/images/test_image.jpeg'), filename: 'test_image.jpeg')
     end
   end
 end
