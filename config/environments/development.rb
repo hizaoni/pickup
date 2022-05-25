@@ -66,14 +66,14 @@ Rails.application.configure do
     address: 'smtp.gmail.com',
     domain: 'gmail.com',
     port: 587,
-    user_name: ENV['younroumuzan@gmail.com'],
-    password: ENV['wbcgkrrpelawxjpb'],
+    user_name: ENV['MAIL_KEY'],
+    password: ENV['MAIL_SECRET_KEY'],
     authentication: 'login',
     enable_starttls_auto: true
   }
 
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
-  config.action_mailer.delivery_method = :letter_opener_web 
+  # config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  # config.action_mailer.delivery_method = :letter_opener_web 
 
 end
 

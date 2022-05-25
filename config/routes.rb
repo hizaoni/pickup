@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   post 'items/select', to: 'items#category_select'
   post 'items/quantity', to: 'items#item_quantity'
   post 'items/search', to: 'items#search_item'
-  if Rails.env.development?
-    mount LetterOpenerWeb::Engine, at: "/letter_opener"
-  end
+  # if Rails.env.development?
+  #   mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  # end
 end
