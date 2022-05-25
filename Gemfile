@@ -71,4 +71,6 @@ gem 'jquery-rails'
 
 gem 'rails-i18n'
 
+gem 'google-api-client'
 
+gem 'dotenv-rails'

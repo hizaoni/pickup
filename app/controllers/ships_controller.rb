@@ -27,7 +27,7 @@ class ShipsController < ApplicationController
         @stock = Stock.where(item_id: ship_param[:item_id])
         @quantity = (@item.quantity + @stock.sum(:quantity)) - @ships.sum(:quantity)
 
-        if ship_param[:quantity].to_i < @quantity
+        if ship_param[:quantity].to_i <= @quantity
           @ship = Ship.new(ship_param)
           if @ship.save
             if @item.order_point > (@quantity - @ship.quantity)
