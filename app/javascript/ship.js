@@ -16,7 +16,6 @@ function shipChoice(){
       currentItemQuantity.innerHTML = "";
       const items = XHR.response.selected_category_items;
       const quantity = XHR.response.quantity;
-      console.log(quantity);
       if (items.length == 0 ) {
         const html = `
           <option value="">なし</option>`;
