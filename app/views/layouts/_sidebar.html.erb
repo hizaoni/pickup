@@ -1,18 +1,24 @@
 <div class="side_bar">
   <% if user_signed_in?%>
     <%unless current_page?(root_path)%>
-      <%= link_to "入出庫画面", root_path, class:"sidebar_content"%><br>
+    <div class="sidebar_content">
+      <%= link_to "入出庫画面", root_path, class:"sidebar_content"%>
+    </div>
     <%end%>
     <%unless current_page?(new_item_path)%>
-      <%= link_to "備品新規登録", new_item_path, class:"sidebar_content"%><br>
+    <div class="sidebar_content">
+      <%= link_to "備品新規登録", new_item_path, class:"sidebar_content"%>
+    </div>
     <%end%>
     <%unless current_page?(items_path)%>
-      <%= link_to "登録備品一覧", items_path, class:"sidebar_content"%><br>
+    <div class="sidebar_content">
+      <%= link_to "登録備品一覧", items_path, class:"sidebar_content"%>
+    </div>
     <%end%>
   <%else%>
-    <p class="sign_out_sidebar_content">入出庫画面</p><br>
-    <p class="sign_out_sidebar_content">備品新規登録</p><br>
-    <p class="sign_out_sidebar_content">登録備品一覧</p><br>
+    <div class="sign_out_sidebar_content">入出庫画面</div>
+    <div class="sign_out_sidebar_content">備品新規登録</div>
+    <div class="sign_out_sidebar_content">登録備品一覧</div>
   <%end%>
 
 </div>

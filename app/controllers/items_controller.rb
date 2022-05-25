@@ -61,15 +61,11 @@ class ItemsController < ApplicationController
       selected_category_items = Item.all
       render json: { selected_category_items: selected_category_items }
     else
-      selected_category_items = Item.where(category_id: category_param[:category_id])
-      if selected_category_items.length == 1
-        select_item_quantity = selected_category_items[0].quantity + Stock.where(item_id: selected_category_items[0].id).sum(:quantity) - Ship.where(item_id: selected_category_items[0].id).sum(:quantity)
-        quantity = {}
-        quantity.store('quantity', select_item_quantity)
-        render json: { selected_category_items: selected_category_items, quantity: quantity }
-      else
-        render json: { selected_category_items: selected_category_items }
-      end
+      selected_category_items = Item.where(category_id: category_param[:category_id]) 
+      select_item_quantity = selected_category_items[0].quantity + Stock.where(item_id: selected_category_items[0].id).sum(:quantity) - Ship.where(item_id: selected_category_items[0].id).sum(:quantity)
+      quantity = {}
+      quantity.store('quantity', select_item_quantity)
+      render json: { selected_category_items: selected_category_items, quantity: quantity }  
     end
   end
 

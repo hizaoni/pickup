@@ -16,6 +16,7 @@ function shipChoice(){
       currentItemQuantity.innerHTML = "";
       const items = XHR.response.selected_category_items;
       const quantity = XHR.response.quantity;
+      console.log(quantity);
       if (items.length == 0 ) {
         const html = `
           <option value="">なし</option>`;
@@ -36,7 +37,11 @@ function shipChoice(){
           const html = `
           <option value="${item.id}">${item.name}</option>`;
           itemSelect.insertAdjacentHTML("afterbegin", html);
-          })
+          });
+          const html2 = `
+          在庫数　${quantity.quantity} ${items[0].unit}`;
+          
+          currentItemQuantity.insertAdjacentHTML("afterbegin", html2);
         }
       }     
     }
