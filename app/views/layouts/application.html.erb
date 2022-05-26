@@ -6,7 +6,7 @@
     <%= csp_meta_tag %>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <script> src="/packs/application.js"</script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -15,12 +15,16 @@
     <header>
       <div class="header_left">
          <%= link_to 'Pickup', root_path, class:"logo" %>
+         
       </div>
+      <% if user_signed_in? %>
+      <p id="menu" class="menu">メニュー</p>
+      <%end%>
       <% unless user_signed_in? %>
       <div class="header_right login">
         <p>管理者</p>
         <% unless current_page?(new_user_session_path)%>
-          <%= link_to 'ログイン', new_user_session_path %>
+          <%= link_to 'ログイン', new_user_session_path, id:"sign-in-flag" %>
         <%end%>
         <%unless current_page?(new_user_registration_path)%>
           <%= link_to '新規登録', new_user_registration_path %>
@@ -35,7 +39,7 @@
     <%= yield %>
     <footer>
       <div class="footer_center">
-        2022 @Pickup
+        ©️2022 Pickup
       </div>
     </footer>
   </body>

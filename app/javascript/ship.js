@@ -36,7 +36,11 @@ function shipChoice(){
           const html = `
           <option value="${item.id}">${item.name}</option>`;
           itemSelect.insertAdjacentHTML("afterbegin", html);
-          })
+          });
+          const html2 = `
+          在庫数　${quantity.quantity} ${items[0].unit}`;
+          
+          currentItemQuantity.insertAdjacentHTML("afterbegin", html2);
         }
       }     
     }

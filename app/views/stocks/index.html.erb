@@ -1,4 +1,5 @@
-<div class="top-main">
+<div class="top-main" id="top-main">
+  <%= render partial: 'layouts/pulldown'%>
   <% if user_signed_in? %>
     <%= render partial: 'layouts/sidebar'%>
   <%else%>

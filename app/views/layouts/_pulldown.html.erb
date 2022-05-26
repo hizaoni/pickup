@@ -1,0 +1,13 @@
+<ul class="show-lists hidden" id="pull-down" style="display: none;">
+    <% if user_signed_in?%>
+      <%unless current_page?(root_path)%>
+        <li><%= link_to "入出庫画面", root_path, class:"sidebar_content_tb"%></li>
+      <%end%>
+      <%unless current_page?(new_item_path)%>
+        <li><%= link_to "備品新規登録", new_item_path, class:"sidebar_content_tb"%></li>
+      <%end%>
+      <%unless current_page?(items_path)%>
+        <li><%= link_to "登録備品一覧", items_path, class:"sidebar_content_tb"%></li>
+      <%end%>
+    <%end%>
+  </ul>
