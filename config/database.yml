@@ -52,3 +52,9 @@ production:
   database: pickup_production
   username: pickup
   password: <%= ENV['PICKUP_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: sendmailtest_production
+  username: sendmailtest
+  password: <%= ENV['SENDMAILTEST_DATABASE_PASSWORD'] %>
