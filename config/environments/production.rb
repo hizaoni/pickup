@@ -115,7 +115,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
   :user_name      => ENV['MAIL_KEY'],
   :password       => ENV['MAIL_SECRET_KEY'],
-  :address:"smtp.gmail.com",
+  :address: 'smtp.gmail.com',
   :domain: 'gmail.com',
   :port:587,
   :authentication => :plain,
