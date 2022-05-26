@@ -13,6 +13,32 @@
  *= require_tree .
  *= require_self
  */
+li a{
+  text-decoration: none;
+  color: black;
+  
+}
+
+li{
+  margin: 10px 10px;
+  
+}
+
+li:hover{
+  font-weight: bold;
+}
+
+.show-lists{
+  width: 150px;
+  position: absolute;
+  top: 60px;
+  background-color: #ffffff;
+  border: solid black 1px;
+}
+
+.hidden{
+  display: none;
+}
 
  body{
   height: 100vh;
@@ -63,7 +89,10 @@ a {
 }
 
 @media (min-width: 1001px) {
-  
+  .menu{
+    display: none;
+
+  }
   
   .items{
     width: 100%;
