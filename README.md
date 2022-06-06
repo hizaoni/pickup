@@ -7,9 +7,12 @@
 # URL
 https://pickup-37875.herokuapp.com/  
 
-# テスト用アカウント
 ID: admin  
-Pass: 2222
+Pass: 2222 
+
+# テスト用アカウント
+メールアドレス: abc@def  
+Pass: aaa111
 
 # 利用方法
 [実装した機能についての説明](https://docs.google.com/document/d/1An2tsO8UCKto7qj0SUY7FnnOyZrZkNn_vhxTLj55RbE/edit)
