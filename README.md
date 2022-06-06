@@ -97,4 +97,6 @@ https://docs.google.com/spreadsheets/d/18O7u01SY70OO5n1dkmihfkJtZtJRERq1Irkzj67L
 % yarn install
 
 # 工夫したポイント
+- 操作性優先、トラブル防止のため装飾は最低限のものとしました。
+- 多くの備品を管理することを想定し、カテゴリーによる絞り込みを行う機能を実装し、検索の簡便化を図りました。
 
