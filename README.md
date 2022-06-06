@@ -13,7 +13,7 @@ ID: admin
 Pass: 2222
 
 # 利用方法
-実装した機能についての画像やGIFおよびその説明※
+[実装した機能についての説明](https://docs.google.com/document/d/1An2tsO8UCKto7qj0SUY7FnnOyZrZkNn_vhxTLj55RbE/edit)
 
 # アプリケーションを作成した背景
 ・私の前職が工場勤務であり、その経験がきっかけで作ったアプリです。工場では、多くの消耗備品があり、欠品すると生産予定に影響があります。 備品の管理は手間がかかリますが、生産性がある仕事ではないため、出来るだけ簡単で、手間がかからない仕組みを必要としていました。
@@ -92,9 +92,11 @@ https://docs.google.com/spreadsheets/d/18O7u01SY70OO5n1dkmihfkJtZtJRERq1Irkzj67L
 - テキストエディタ: &nbsp;Visual Studio Code
 
 # ローカルでの動作方法
-% git clone https://github.com/hizaoni/pickup.git
-% cd pickup
-% bundle install
+% git clone https://github.com/hizaoni/pickup.git  
+% cd pickup  
+
+% bundle install  
+
 % yarn install
 
 # 工夫したポイント
