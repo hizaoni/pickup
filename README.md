@@ -9,7 +9,6 @@ https://pickup-37875.herokuapp.com/
 
 # テスト用アカウント
 ID: admin  
-
 Pass: 2222
 
 # 利用方法
@@ -94,9 +93,7 @@ https://docs.google.com/spreadsheets/d/18O7u01SY70OO5n1dkmihfkJtZtJRERq1Irkzj67L
 # ローカルでの動作方法
 % git clone https://github.com/hizaoni/pickup.git  
 % cd pickup  
-
 % bundle install  
-
 % yarn install
 
 # 工夫したポイント
