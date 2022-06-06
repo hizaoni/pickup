@@ -1,27 +1,34 @@
-# README
+# Pickup!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# 概要
+備品の入出庫管理をすることを目的としています。
+また、管理者と登録したユーザーのみ、備品の情報を登録することができ、現在の備品在庫数も表示することが可能です。
 
-Things you may want to cover:
+# URL
+https://pickup-37875.herokuapp.com/  
 
-* Ruby version
+# テスト用アカウント
+ID: admin  
 
-* System dependencies
+Pass: 2222
 
-* Configuration
+# 利用方法
+実装した機能についての画像やGIFおよびその説明※
 
-* Database creation
+# アプリケーションを作成した背景
+・私の前職が工場勤務であり、その経験がきっかけで作ったアプリです。工場では、多くの消耗備品があり、欠品すると生産予定に影響があります。 備品の管理は手間がかかリますが、生産性がある仕事ではないため、出来るだけ簡単で、手間がかからない仕組みを必要としていました。
+これを解決したいという思いから、アプリを作成しました。
 
-* Database initialization
 
-* How to run the test suite
+# 洗い出した要件
+[要件定義スプレッドシート](
+https://docs.google.com/spreadsheets/d/18O7u01SY70OO5n1dkmihfkJtZtJRERq1Irkzj67LHRs/edit#gid=982722306)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 実装予定の機能
+- SwiftUIを用いたiOS機器での操作
+  - QRコードの読み取りにより、入出庫する備品を選択できるようにする。
+  - 登録備品一覧を閲覧できるようにする。
+- 備品発注点に達した備品の発注書を自動発行する機能
 
 # データベース設計
 
@@ -74,3 +81,21 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :item
+
+# 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/2e41fdc756b324e9b25b9ab63504fb6b.png)](https://gyazo.com/2e41fdc756b324e9b25b9ab63504fb6b)
+
+# 開発環境
+- バックエンド: &nbsp;Ruby on Rails, MySQL
+- フロントエンド: &nbsp;HTML, CSS, JavaScript
+- タスク管理: &nbsp;GitHub
+- テキストエディタ: &nbsp;Visual Studio Code
+
+# ローカルでの動作方法
+% git clone https://github.com/hizaoni/pickup.git
+% cd pickup
+% bundle install
+% yarn install
+
+# 工夫したポイント
+
