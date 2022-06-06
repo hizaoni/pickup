@@ -22,17 +22,17 @@
       <%end%>
       <% unless user_signed_in? %>
       <div class="header_right login">
-        <p>管理者</p>
+        管理者:  
         <% unless current_page?(new_user_session_path)%>
-          <%= link_to 'ログイン', new_user_session_path, id:"sign-in-flag" %>
+          <%= link_to 'ログイン', new_user_session_path, id:"sign-in-flag", class:"header_right_login" %>
         <%end%>
         <%unless current_page?(new_user_registration_path)%>
-          <%= link_to '新規登録', new_user_registration_path %>
+          <%= link_to '新規登録', new_user_registration_path, class:"header_right_login" %>
         <%end%>
       </div>
       <% else %>
       <div class="header_right logout">
-        <%= current_user.name %> <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+        管理者:  <%= current_user.name %> <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:"header_right_login" %>
       </div>
       <%end%>
     </header>

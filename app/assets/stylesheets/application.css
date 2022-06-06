@@ -70,6 +70,10 @@ header{
   color: beige;
 }
 
+.header_right_login:hover{
+  font-weight: bold;
+}
+
 .header_right{
   color: beige;
 }
