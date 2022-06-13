@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+  namespace :api, { format: 'json' } do
+    namespace :v1 do # バージョン1を表している
+      resources :items_api
+    end
+  end
   devise_for :users
   devise_scope :user do
     get '/users', to: 'devise/registrations#new'
   end
+  
   root to: 'stocks#index'
   resources 'items'
   resources 'stocks', only: [:new, :create]
@@ -15,4 +21,5 @@ Rails.application.routes.draw do
   # if Rails.env.development?
   #   mount LetterOpenerWeb::Engine, at: "/letter_opener"
   # end
+ 
 end
