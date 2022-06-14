@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   namespace :api, { format: 'json' } do
     namespace :v1 do # バージョン1を表している
       resources :items_api
+      resources :stocks_api
     end
   end
   devise_for :users
