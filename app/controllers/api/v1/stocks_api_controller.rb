@@ -9,6 +9,7 @@ module Api
 
       def create
         Stock.create(stock_param)
+        binding.pry
 
       end
 
