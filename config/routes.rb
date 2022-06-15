@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do # バージョン1を表している
       resources :items_api
       resources :stocks_api
+      resources :ships_api
     end
   end
   devise_for :users
