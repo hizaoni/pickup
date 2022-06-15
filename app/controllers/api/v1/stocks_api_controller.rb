@@ -8,6 +8,7 @@ module Api
       end
 
       def create
+        binding.pry
         Stock.create(stock_param)
         binding.pry
 
