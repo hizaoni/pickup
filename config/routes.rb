@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   
   root to: 'stocks#index'
   resources 'items'
-  resources 'stocks', only: [:new, :create]
+  resources 'stocks', only: [:new, :create, :show]
   resources 'ships', only: [:new, :create, :index]
 
   delete 'items', to: 'items#destroy_many'

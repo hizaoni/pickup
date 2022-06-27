@@ -12,6 +12,7 @@ class ShipsController < ApplicationController
     quantity_check
   end
 
+
   private
 
 

@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, except: :category_select
   before_action :item_find, only: [:show, :edit, :update, :destroy]
 
+
   def index
     @items = Item.all.order(id: 'DESC')
   end

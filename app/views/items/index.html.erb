@@ -44,6 +44,9 @@
                 <td class="item_table_button">
                   <%= link_to "削除", item_path(item), method: :delete, class:"index_button" %>
                 </td>
+                 <td class="item_table_button">
+                  <%= link_to "履歴", stock_path(item), class:"index_button" %>
+                </td>
               </tr>
             <% else %>
               <tr id="data-items-index" class="data_items_index">
@@ -60,6 +63,9 @@
                 </td>
                 <td class="item_table_button">
                   <%= link_to "削除", item_path(item), method: :delete, class:"index_button" %>
+                </td>
+                <td class="item_table_button">
+                  <%= link_to "履歴", stock_path(item), class:"index_button" %>
                 </td>
               </tr>
             <%end%>

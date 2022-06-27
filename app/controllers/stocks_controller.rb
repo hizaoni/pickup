@@ -1,4 +1,5 @@
 class StocksController < ApplicationController
+  before_action :authenticate_user!, only: :show
   def new
     @items = Item.all
     @stock = Stock.new
@@ -11,6 +12,10 @@ class StocksController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    binding.pry
   end
 
 
