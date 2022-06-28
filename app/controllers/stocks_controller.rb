@@ -16,6 +16,7 @@ class StocksController < ApplicationController
 
   def show
     @stocks = Stock.where(item_id: params[:id])
+    @item = Item.find(params[:id])
   end
 
 
