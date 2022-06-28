@@ -19,6 +19,14 @@ class StocksController < ApplicationController
     @item = Item.find(params[:id])
   end
 
+  def destroy
+    @stock = Stock.find(params[:id])
+    @item = Item.find_by(id: @stock.item_id)
+    @stock.destroy
+    @stocks = Stock.where(item_id: @stock.item_id)
+    redirect_to items_path
+  end
+
 
   private
 

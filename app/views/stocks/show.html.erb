@@ -20,25 +20,17 @@
     <table id="items-table" class="items_table">
       <tbody id="items-tbody">
         <tr id="menu-items-index" class="menu_items_index">  
-          <th class="item_table_name">数量</th>
           <th class="item_table_category">日付</th>
-          <th class="item_table_quantity">在庫数</th>
-          <th class="item_table_order_point">発注点</th>
-          <th></th>
+          <th class="item_table_name">数量</th>
           <th></th>
         </tr>
           
           <% @stocks.each do |stock|%>
               <tr id="data-items-index" class="data_items_index">
-                <td class="item_table_order_point"><%=stock.quantity%></td>
                 <td class="item_table_time"><%=stock.created_at.strftime("%Y年%m月%d日")%><br><%=stock.created_at.strftime("%H時%M分")%></td>
-                <td class="item_table_order_point">在庫数</td>
-                <td class="item_table_order_point"><%=@item.order_point%></td>
+                <td class="item_table_order_point"><%=stock.quantity%></td>
                 <td class="item_table_button">
-                  <%= link_to "編集", '#', class:"index_button" %>
-                </td>
-                <td class="item_table_button">
-                  <%= link_to "削除", '#', method: :delete, class:"index_button" %>
+                  <%= link_to "削除", stock_path(stock), method: :delete, class:"index_button" %>
                 </td>
               </tr>
            

@@ -8,6 +8,14 @@ class ShipsController < ApplicationController
     @ship = Ship.new
   end
 
+  def destroy
+    @ship = Ship.find(params[:id])
+    @item = Item.find_by(id: @ship.item_id)
+    @ship.destroy
+    @ships = Stock.where(item_id: @ship.item_id)
+    redirect_to items_path
+  end
+
   def create
     quantity_check
   end
