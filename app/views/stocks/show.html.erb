@@ -16,7 +16,7 @@
           <% @stocks.each do |stock|%>
               <tr id="data-items-index" class="data_items_index">
                 <td class="item_table_order_point"><%=stock.quantity%></td>
-                <td class="item_table_order_point"><%=stock.created_at%></td>
+                <td class="item_table_time"><%=stock.created_at.strftime("%Y年%m月%d日")%><br><%=stock.created_at.strftime("%H時%M分")%></td>
                 <td class="item_table_order_point">在庫数</td>
                 <td class="item_table_order_point">発注点</td>
                 <td class="item_table_button">

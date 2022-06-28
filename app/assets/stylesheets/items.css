@@ -95,6 +95,10 @@ th{
   text-align: center;
 }
 
+.item_table_time{
+  width: 180px;
+  padding: 10px;
+}
 
 .index_button {
   background-color: #EEEEEE;
