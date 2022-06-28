@@ -15,7 +15,7 @@ class StocksController < ApplicationController
   end
 
   def show
-    binding.pry
+    @stocks = Stock.where(item_id: params[:id])
   end
 
 
