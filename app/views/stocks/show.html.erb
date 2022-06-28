@@ -2,8 +2,20 @@
   <%= render partial: 'layouts/pulldown'%>
   <%= render partial: 'layouts/sidebar'%>
   <div class="items_show">
-    <div class="">
-      <%= @item.name %>入庫<%= link_to "出庫", ship_path(@item.id) %>
+    <div class="items_history_title">
+      <div class="items_history_title_left">
+        <div class="history_item_name"><%= @item.name %></div>
+        <div class="history_title">
+            入庫履歴
+        </div>
+      </div>
+      <div class="history_item_button">
+       
+        <div class="history_on" >
+          <%= link_to "出庫履歴", ship_path(@item.id), class:"history_button" %>
+        </div>
+        
+      </div>
     </div>
     <table id="items-table" class="items_table">
       <tbody id="items-tbody">

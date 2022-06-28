@@ -311,3 +311,45 @@ th{
   margin-left: 20px;
 
 }
+
+.items_history_title{
+  margin-bottom: 10px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+}
+
+
+
+
+.history_off{
+  color: #777777;
+}
+
+.history_on a{
+  text-decoration: none;
+  color: black;
+}
+
+
+
+.items_history_title_left{
+  display: flex;
+}
+
+.history_item_name{
+  margin-right: 20px;
+}
+
+.history_button{
+  background-color: #FFFFFF;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border-bottom: solid #BBBBBB 3px;
+  border-right: solid #BBBBBB 3px;
+  letter-spacing: 3px;
+}
+.history_button :hover{
+  background-color: yellow;
+}
