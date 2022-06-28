@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   root to: 'stocks#index'
   resources 'items'
   resources 'stocks', only: [:new, :create, :show]
-  resources 'ships', only: [:new, :create, :index]
+  resources 'ships', only: [:new, :create, :index, :show]
 
   delete 'items', to: 'items#destroy_many'
   post 'items/select', to: 'items#category_select'

@@ -12,6 +12,11 @@ class ShipsController < ApplicationController
     quantity_check
   end
 
+  def show
+    @ships = Ship.where(item_id: params[:id])
+    @item = Item.find(params[:id])
+  end
+
 
   private
 
